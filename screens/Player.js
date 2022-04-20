@@ -4,12 +4,12 @@ import { SetaBaixo } from '../Components/SetaBaixo/SetaBaixo';
 import { TresPontos } from '../Components/TresPontos/TrePontos';
 import LinearGradient  from 'react-native-linear-gradient'
 
-const Background = ({}) => {
+const Background = ({children}) => {
     return(
         <LinearGradient
             colors={['#464769', '#1b1A1f']}
             style={{flex:1,}}>
-
+            {children}
         </LinearGradient>
     )
 }
