@@ -4,6 +4,6 @@ import styled from 'styled-components';
 
 export function SetaBaixo(){
     return(
-        <Icon name='caret-down-sharp' size={20}/>
+        <Icon name='caret-down-sharp' size={25}  color={'white'}/>
     )
 }

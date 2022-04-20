@@ -1,37 +1,67 @@
 import React from 'react';
-import { View, Text, StyleSheet} from 'react-native';
 import styled from 'styled-components';
 import { SetaBaixo } from '../Components/SetaBaixo/SetaBaixo';
 import { TresPontos } from '../Components/TresPontos/TrePontos';
+import LinearGradient  from 'react-native-linear-gradient'
 
-const BackGround = styled.View`
-flex: 1;
-background-color: #757575;
+const Background = ({}) => {
+    return(
+        <LinearGradient
+            colors={['#464769', '#1b1A1f']}
+            style={{flex:1,}}>
 
-`;
+        </LinearGradient>
+    )
+}
 
 const TopBar = styled.View`
-background-color: #757575;
+flex-direction: row;
+margin-top: 10px;
 `;
-const Title = styled.Text`
-color: #fff;
-
+TopBar.Left = styled.View`
+flex: 1;
+padding-left: 16px;
+justify-content:center;
 `;
-const SubTitle = styled.Text`
-color: #fff;
-
+TopBar.Middle = styled.View`
+flex: 2;
+align-items: center;
+`;
+TopBar.Right = styled.View`
+flex: 1;
+padding-right: 16px;
+align-items: flex-end;
+justify-content:center;
+`;
+TopBar.Title = styled.Text`
+color:white;
+text-transform:uppercase;
+`;
+TopBar.SubTitle = styled.Text`
+color:white;
+font-weight: bold;
 `;
 
 export function PlayerScreen(){
-
     return(
-        <BackGround>
-            <TopBar>
+    <Background>
+        <TopBar>
+            <TopBar.Left>
                 <SetaBaixo />
-                <Title>Titulo da página</Title>
-                <SubTitle>subtitulo da página</SubTitle>   
+            </TopBar.Left>
+
+            <TopBar.Middle>
+                <TopBar.Title>
+                    Titulo da página
+                </TopBar.Title>
+                <TopBar.SubTitle>
+                    Subtitulo da página 
+                </TopBar.SubTitle>
+            </TopBar.Middle>                
+            <TopBar.Right>
                 <TresPontos/>        
-            </TopBar>
-        </BackGround>
+            </TopBar.Right>
+        </TopBar>
+    </Background>
     )
 }
